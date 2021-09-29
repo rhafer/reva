@@ -21,5 +21,6 @@ package loader
 import (
 	// Load core user manager drivers.
 	_ "github.com/cs3org/reva/pkg/admin/manager/demo"
+	_ "github.com/cs3org/reva/pkg/admin/manager/ldap"
 	// Add your own here
 )
