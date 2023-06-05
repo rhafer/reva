@@ -198,6 +198,7 @@ func NewConn(endpoint string, opts ...Option) (*grpc.ClientConn, error) {
 
 	conn, err := grpc.Dial(
 		endpoint,
+		grpc.WithDefaultServiceConfig(`{"loadBalancingConfig": [{"round_robin":{}}]}`), // This sets the initial balancing policy.
 		grpc.WithTransportCredentials(cred),
 		grpc.WithDefaultCallOptions(
 			grpc.MaxCallRecvMsgSize(maxCallRecvMsgSize),
