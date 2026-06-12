@@ -405,7 +405,7 @@ func (session *DecomposedFsSession) createRevisionNodeForUpload(ctx context.Cont
 func checkHash(expected string, h hash.Hash) error {
 	shash := hex.EncodeToString(h.Sum(nil))
 	if expected != shash {
-		return errtypes.ChecksumMismatch(fmt.Sprintf("invalid checksum: expected %s got %x", expected, shash))
+		return errtypes.ChecksumMismatch(fmt.Sprintf("invalid checksum: expected %s got %s", expected, shash))
 	}
 	return nil
 }
